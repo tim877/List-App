@@ -1,0 +1,293 @@
+/* General Body and Form Container Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  /* Dark background */
+  color: #f4f4f4;
+  /* Light text color */
+  margin: 0;
+  padding: 20px;
+}
+
+.form-container {
+  position: relative;
+  /* Position context for absolutely positioned elements */
+  background-color: #2a2a2a;
+  /* Darker container */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Headers */
+h1 {
+  color: #ffffff;
+  /* White text for headers */
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  /* White text for section header */
+}
+
+/* Input and Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  /* Darker border */
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #333;
+  /* Dark input field */
+  color: #f4f4f4;
+  /* Light text in input */
+}
+
+button[type="submit"] {
+  background-color: #0a810a;
+  /* Green button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #4cae4c;
+  /* Darker green on hover */
+}
+
+/* Dropdown Select Styles */
+.categories,
+.deleteSelected {
+  padding: 10px;
+  border: 1px solid #444;
+  /* Darker border */
+  border-radius: 4px;
+  background-color: #333;
+  /* Dark background for select */
+  color: #f4f4f4;
+  /* Light text */
+  margin-bottom: 10px;
+  /* Space below the select */
+}
+
+.deleteSelected {
+  flex: 1;
+  /* Allow select to grow */
+  margin-right: 10px;
+  /* Space between select and button */
+  height: 40px;
+  /* Fixed height for consistent alignment */
+}
+
+/* Category Label */
+.category-label {
+  color: #ffffff;
+  /* White text for the label */
+  font-size: 16px;
+  /* Font size */
+  margin-bottom: 5px;
+  /* Space below the label */
+  text-align: left;
+  /* Align text to the left */
+  font-weight: bold;
+  /* Make the label bold */
+}
+
+/* Button Styles */
+.delete-category-button,
+.addCategory,
+.clear-button,
+.lock-category-button,
+.remove-button,
+.edit-button {
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-category-button {
+  background-color: #007bff;
+  /* Blue background for category button */
+  color: white;
+  border: none;
+  height: 40px;
+  /* Fixed height for consistent alignment */
+  width: 150px;
+  /* Set a fixed width for the button */
+  margin-left: 10px;
+  /* Space between select and button */
+  display: flex;
+  /* Use flexbox for centering */
+  justify-content: center;
+  /* Center text horizontally */
+  align-items: center;
+  /* Center text vertically */
+}
+
+.delete-category-button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+.addCategory {
+  background-color: #007bff;
+  /* Blue background for Add Category button */
+  color: white;
+  border: none;
+  width: 100%;
+  /* Full width for button */
+  margin-top: 10px;
+  /* Space above the button */
+  height: 40px;
+  /* Same height for alignment */
+}
+
+.addCategory:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+.clear-button {
+  background-color: #d9534f;
+  /* Red color */
+  color: white;
+  /* White text */
+  border: none;
+  padding: 10px 15px;
+  /* More padding for prominence */
+  margin-top: 20px;
+  /* Space above the button */
+  width: 100%;
+}
+
+.clear-button:hover {
+  background-color: #c9302c;
+  /* Darker red on hover */
+}
+
+.lock-category-button {
+  background-color: #ffcc00;
+  /* Yellow background for lock button */
+  color: black;
+  /* Black text */
+  border: none;
+  position: absolute;
+  /* Make the button position absolute */
+  top: 10px;
+  /* Distance from the top */
+  right: 10px;
+  /* Distance from the right */
+}
+
+.lock-category-button:hover {
+  background-color: #e6b800;
+  /* Darker yellow on hover */
+}
+
+.remove-button {
+  background-color: #d9534f;
+  /* Red button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+.remove-button:hover {
+  background-color: #c9302c;
+  /* Darker red on hover */
+}
+
+.edit-button {
+  background-color: #ff9800;
+  /* Orange background */
+  color: white;
+  /* White text */
+  border: none;
+  padding: 5px 10px;
+  /* Add padding for better appearance */
+}
+
+.edit-button:hover {
+  background-color: #fb8c00;
+  /* Darker orange on hover */
+}
+
+/* Data Container and List Item Styles */
+.data-container {
+  margin-top: 20px;
+}
+
+.data-container ul,
+ul {
+  list-style-type: none;
+  /* Remove default list style */
+  padding: 0;
+  /* Remove padding */
+}
+
+.data-container li,
+li {
+  display: flex;
+  /* Use flexbox */
+  justify-content: space-between;
+  /* Space between text and buttons */
+  align-items: center;
+  /* Align items vertically */
+  margin-bottom: 10px;
+  /* Space between list items */
+  background-color: #3a3a3a;
+  /* Dark list item background */
+  padding: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* Prevent overflow */
+}
+
+.text-container {
+  flex: 1;
+  /* Allow text to take available space */
+  margin-right: 10px;
+  /* Space between text and buttons */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  overflow: hidden;
+  /* Prevent overflow */
+
+  /* Enable text wrapping */
+  word-wrap: break-word;
+  /* or use overflow-wrap */
+  white-space: normal;
+  /* Allows text to wrap to the next line */
+}
+
+.button-container {
+  display: flex;
+  /* Use flexbox for buttons */
+  gap: 10px;
+  /* Space between buttons */
+}
+
+/* Delete Category Container Styles */
+.delete-category-container {
+  display: flex;
+  /* Use flexbox to align items */
+  align-items: stretch;
+  /* Stretch items to the same height */
+  margin-top: 10px;
+  /* Space above the container */
+}
