@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, TextField, FormControl, InputLabel, Select, MenuItem, Box, Stack } from '@mui/material';
+import { Button, FormControl, InputLabel, Select, MenuItem, Box, Stack, Tooltip } from '@mui/material';
 import '../styles/FormAndCategoryStyles.css'; // Combined CSS
 
 const ActionButtons = ({
@@ -31,9 +31,15 @@ const ActionButtons = ({
                     label="Select Category"
                 >
                     {categories.map((cat, index) => (
-                        <MenuItem key={index} value={cat}>
-                            {cat}
-                        </MenuItem>
+                        <Tooltip
+                            key={index}
+                            title={cat === 'General' ? 'You cannot delete the General category' : ''}
+                            arrow
+                        >
+                            <MenuItem value={cat} disabled={cat === 'General'}>
+                                {cat}
+                            </MenuItem>
+                        </Tooltip>
                     ))}
                 </Select>
             </FormControl>
@@ -44,7 +50,7 @@ const ActionButtons = ({
                 color="primary"
                 fullWidth
                 onClick={handleDeleteCategory}
-                disabled={!categoryToDelete}
+                disabled={!categoryToDelete || categoryToDelete === 'General'}
             >
                 Delete Selected Category
             </Button>
