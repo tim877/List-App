@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Box } from '@mui/material';
-import '../styles/FormAndCategoryStyles.css'; // Import combined CSS
+import '../styles/FormAndCategoryStyles.css';
 
 const CategorySelector = ({ categories, category, setCategory }) => (
     <Box sx={{ mt: 2 }}> {/* Add margin-top using Material-UI's Box */}

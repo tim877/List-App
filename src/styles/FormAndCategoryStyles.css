@@ -2,67 +2,76 @@
 
 /* Text Input */
 .custom-text-field .MuiOutlinedInput-root {
-    background-color: #1e1e1e; /* Dark gray background */
-    color: #ffffff; /* White text */
-    border-radius: 4px; /* Rounded corners */
-    border: 1px solid #4a4a4a; /* Subtle border */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #4a4a4a;
 }
 
 .custom-text-field .MuiOutlinedInput-root:hover {
-    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+    background-color: #2a2a2a;
 }
 
 .custom-text-field .MuiOutlinedInput-notchedOutline {
-    border-color: #4a4a4a; /* Border color */
+    border-color: #4a4a4a;
 }
 
 .custom-text-field .MuiInputLabel-root {
-    color: #bfbfbf; /* Light gray for label text */
+    color: #bfbfbf;
 }
 
 /* Category Dropdown */
 .custom-category-selector .MuiOutlinedInput-root {
-    background-color: #1e1e1e; /* Dark gray background */
-    color: #ffffff; /* White text */
-    border-radius: 4px; /* Rounded corners */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 4px;
 }
 
 .custom-category-selector .MuiOutlinedInput-root:hover {
-    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+    background-color: #2a2a2a;
 }
 
 .custom-category-selector .MuiOutlinedInput-notchedOutline {
-    border-color: #4a4a4a; /* Border color */
+    border-color: #4a4a4a;
 }
 
 .custom-category-selector .MuiInputLabel-root {
-    color: #bfbfbf; /* Light gray for label text */
+    color: #bfbfbf;
 }
 /* Custom styles for "Category to Delete" dropdown */
 .custom-delete-category .MuiOutlinedInput-root {
-    background-color: #1e1e1e; /* Dark gray background */
-    color: #ffffff; /* White text */
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .custom-delete-category .MuiOutlinedInput-root:hover {
-    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+    background-color: #2a2a2a;
 }
 
 .custom-delete-category .MuiOutlinedInput-notchedOutline {
-    border-color: #4a4a4a; /* Border color */
+    border-color: #4a4a4a;
 }
 
 .custom-delete-category .MuiInputLabel-root {
-    color: #bfbfbf; /* Light gray for the label */
+    color: #bfbfbf; 
 }
 
 .custom-delete-category .MuiMenuItem-root {
-    background-color: #1e1e1e; /* Same background for menu items */
-    color: #ffffff; /* White text */
+    background-color: #1e1e1e; 
+    color: #ffffff; 
 }
 
 .custom-delete-category .MuiMenuItem-root:hover {
-    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+    background-color: #2a2a2a; 
 }
+
+.shared-container {
+    background-color: #2a2a2a; 
+    border-radius: 8px; 
+    padding: 16px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+

@@ -1,0 +1,18 @@
+.home-page-container {
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e8a;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+}
+
+.centered-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

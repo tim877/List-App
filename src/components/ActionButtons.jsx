@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, FormControl, InputLabel, Select, MenuItem, Box, Stack, Tooltip } from '@mui/material';
-import '../styles/FormAndCategoryStyles.css'; // Combined CSS
+import { Button, Stack } from '@mui/material';
+import CategorySelector from './CategorySelector';
 
 const ActionButtons = ({
     handleClear,
@@ -10,52 +10,50 @@ const ActionButtons = ({
     setCategoryToDelete,
     categories,
 }) => (
-    <Box>
-        <Stack spacing={2}>
-            {/* Add Category Button */}
-            <Button variant="contained" color="secondary" fullWidth onClick={handleAddCategory}>
-                Add Category
-            </Button>
+    <Stack spacing={2} direction="column">
+        {/* Add Category Button */}
+        <Button
+            variant="contained"
+            color="secondary"
+            size="small"
+            fullWidth
+            onClick={handleAddCategory}
+        >
+            Add Category
+        </Button>
 
-            {/* Clear All Button */}
-            <Button variant="contained" color="error" fullWidth onClick={handleClear}>
-                Clear All
-            </Button>
+        {/* Clear All Button */}
+        <Button
+            variant="contained"
+            color="error"
+            size="small"
+            fullWidth
+            onClick={handleClear}
+        >
+            Clear All Data In Category
+        </Button>
 
-            {/* Dropdown for Category to Delete */}
-            <FormControl fullWidth variant="outlined" className="custom-delete-category">
-                <InputLabel>Select Category</InputLabel>
-                <Select
-                    value={categoryToDelete}
-                    onChange={(e) => setCategoryToDelete(e.target.value)}
-                    label="Select Category"
-                >
-                    {categories.map((cat, index) => (
-                        <Tooltip
-                            key={index}
-                            title={cat === 'General' ? 'You cannot delete the General category' : ''}
-                            arrow
-                        >
-                            <MenuItem value={cat} disabled={cat === 'General'}>
-                                {cat}
-                            </MenuItem>
-                        </Tooltip>
-                    ))}
-                </Select>
-            </FormControl>
+        <p>Select a category to delete</p>
 
-            {/* Delete Selected Category Button */}
-            <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                onClick={handleDeleteCategory}
-                disabled={!categoryToDelete || categoryToDelete === 'General'}
-            >
-                Delete Selected Category
-            </Button>
-        </Stack>
-    </Box>
+        {/* Delete Category Dropdown using CategorySelector */}
+        <CategorySelector
+            categories={categories}
+            category={categoryToDelete}
+            setCategory={setCategoryToDelete}
+        />
+
+        {/* Delete Selected Category Button */}
+        <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            onClick={handleDeleteCategory}
+            disabled={!categoryToDelete}
+            sx={{ marginTop: '16px' }}
+        >
+            Delete Selected Category
+        </Button>
+    </Stack>
 );
 
 export default ActionButtons;
