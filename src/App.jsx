@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData, saveData } from './api/dataService';
-import { Container, Typography, Box } from '@mui/material';
-import TextInputForm from './components/TextInputForm';
+import { Container, Typography } from '@mui/material';
+import CustomForm from './components/CustomForm'; // Use only CustomForm
 import CategorySelector from './components/CategorySelector';
 import DataList from './components/DataList';
 import ActionButtons from './components/ActionButtons';
 
-function App() {
+const App = () => {
     const [inputValue, setInputValue] = useState('');
     const [category, setCategory] = useState('General');
     const [data, setData] = useState([]);
@@ -26,10 +26,7 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!inputValue.trim()) {
-            alert('Please enter valid input.');
-            return;
-        }
+        if (!inputValue.trim()) return alert('Please enter valid input.');
         const newData = { text: inputValue, category };
         const updatedList = [newData, ...data];
         saveData(updatedList).then(() => setData(updatedList));
@@ -62,16 +59,11 @@ function App() {
         const newCategory = prompt('Enter new category:');
         if (newCategory && !categories.includes(newCategory)) {
             setCategories([...categories, newCategory]);
-        } else {
-            alert('Category already exists or is invalid.');
         }
     };
 
     const handleDeleteCategory = () => {
-        if (!categoryToDelete) {
-            alert('Please select a category to delete.');
-            return;
-        }
+        if (!categoryToDelete) return alert('Please select a category to delete.');
         if (window.confirm(`Are you sure you want to delete category "${categoryToDelete}"?`)) {
             const updatedCategories = categories.filter((cat) => cat !== categoryToDelete);
             setCategories(updatedCategories);
@@ -89,9 +81,21 @@ function App() {
             <Typography variant="h4" align="center" gutterBottom>
                 Material-UI Text Input App
             </Typography>
-            <TextInputForm inputValue={inputValue} setInputValue={setInputValue} handleSubmit={handleSubmit} />
-            <CategorySelector categories={categories} category={category} setCategory={setCategory} />
-            <DataList filteredData={filteredData} handleEdit={handleEdit} handleRemove={handleRemove} />
+            <CustomForm
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                handleSubmit={handleSubmit}
+            />
+            <CategorySelector
+                categories={categories}
+                category={category}
+                setCategory={setCategory}
+            />
+            <DataList
+                filteredData={filteredData}
+                handleEdit={handleEdit}
+                handleRemove={handleRemove}
+            />
             <ActionButtons
                 handleClear={handleClear}
                 handleAddCategory={handleAddCategory}
@@ -102,6 +106,7 @@ function App() {
             />
         </Container>
     );
-}
+
+};
 
 export default App;

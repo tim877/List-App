@@ -1,0 +1,68 @@
+/* Custom styles for input fields and dropdowns */
+
+/* Text Input */
+.custom-text-field .MuiOutlinedInput-root {
+    background-color: #1e1e1e; /* Dark gray background */
+    color: #ffffff; /* White text */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #4a4a4a; /* Subtle border */
+}
+
+.custom-text-field .MuiOutlinedInput-root:hover {
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+}
+
+.custom-text-field .MuiOutlinedInput-notchedOutline {
+    border-color: #4a4a4a; /* Border color */
+}
+
+.custom-text-field .MuiInputLabel-root {
+    color: #bfbfbf; /* Light gray for label text */
+}
+
+/* Category Dropdown */
+.custom-category-selector .MuiOutlinedInput-root {
+    background-color: #1e1e1e; /* Dark gray background */
+    color: #ffffff; /* White text */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.custom-category-selector .MuiOutlinedInput-root:hover {
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+}
+
+.custom-category-selector .MuiOutlinedInput-notchedOutline {
+    border-color: #4a4a4a; /* Border color */
+}
+
+.custom-category-selector .MuiInputLabel-root {
+    color: #bfbfbf; /* Light gray for label text */
+}
+/* Custom styles for "Category to Delete" dropdown */
+.custom-delete-category .MuiOutlinedInput-root {
+    background-color: #1e1e1e; /* Dark gray background */
+    color: #ffffff; /* White text */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.custom-delete-category .MuiOutlinedInput-root:hover {
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+}
+
+.custom-delete-category .MuiOutlinedInput-notchedOutline {
+    border-color: #4a4a4a; /* Border color */
+}
+
+.custom-delete-category .MuiInputLabel-root {
+    color: #bfbfbf; /* Light gray for the label */
+}
+
+.custom-delete-category .MuiMenuItem-root {
+    background-color: #1e1e1e; /* Same background for menu items */
+    color: #ffffff; /* White text */
+}
+
+.custom-delete-category .MuiMenuItem-root:hover {
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+}

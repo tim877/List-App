@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Stack } from '@mui/material';
+import { Button, TextField, FormControl, InputLabel, Select, MenuItem, Box, Stack } from '@mui/material';
+import '../styles/FormAndCategoryStyles.css'; // Combined CSS
 
 const ActionButtons = ({
     handleClear,
@@ -9,21 +10,46 @@ const ActionButtons = ({
     setCategoryToDelete,
     categories,
 }) => (
-    <Stack spacing={2} direction="column" sx={{ mt: 3 }}>
-        <Button variant="contained" color="secondary" onClick={handleAddCategory}>
-            Add Category
-        </Button>
-        <Button variant="contained" color="error" onClick={handleClear}>
-            Clear All
-        </Button>
-        <Button
-            variant="contained"
-            onClick={handleDeleteCategory}
-            disabled={!categoryToDelete}
-        >
-            Delete Category
-        </Button>
-    </Stack>
+    <Box>
+        <Stack spacing={2}>
+            {/* Add Category Button */}
+            <Button variant="contained" color="secondary" fullWidth onClick={handleAddCategory}>
+                Add Category
+            </Button>
+
+            {/* Clear All Button */}
+            <Button variant="contained" color="error" fullWidth onClick={handleClear}>
+                Clear All
+            </Button>
+
+            {/* Dropdown for Category to Delete */}
+            <FormControl fullWidth variant="outlined" className="custom-delete-category">
+                <InputLabel>Select Category</InputLabel>
+                <Select
+                    value={categoryToDelete}
+                    onChange={(e) => setCategoryToDelete(e.target.value)}
+                    label="Select Category"
+                >
+                    {categories.map((cat, index) => (
+                        <MenuItem key={index} value={cat}>
+                            {cat}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+
+            {/* Delete Selected Category Button */}
+            <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={handleDeleteCategory}
+                disabled={!categoryToDelete}
+            >
+                Delete Selected Category
+            </Button>
+        </Stack>
+    </Box>
 );
 
 export default ActionButtons;

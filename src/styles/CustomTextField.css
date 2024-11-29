@@ -1,4 +1,4 @@
-/* Container for the input field */
+Container for the input field
 .custom-textfield-container {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 /* Limit the height for multiline input */
 .custom-textfield .MuiOutlinedInput-input {
-    max-height: 120px; /* Maximum height for the input area */
+    max-height: 5px; /* Maximum height for the input area */
     overflow-y: auto; /* Add vertical scroll if content exceeds height */
     padding: 8px; /* Adjust padding for better spacing */
 }
