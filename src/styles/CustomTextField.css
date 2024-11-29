@@ -1,0 +1,33 @@
+/* Container for the input field */
+.custom-textfield-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spacing between elements */
+    width: 100%; /* Full width */
+}
+
+/* Styling for the TextField itself */
+.custom-textfield .MuiOutlinedInput-root {
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Border color and hover effects */
+.custom-textfield .MuiOutlinedInput-root fieldset {
+    border-color: #ccc; /* Default border color */
+}
+
+.custom-textfield .MuiOutlinedInput-root:hover fieldset {
+    border-color: #888; /* Border color on hover */
+}
+
+.custom-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: #3f51b5; /* Primary color on focus */
+}
+
+/* Limit the height for multiline input */
+.custom-textfield .MuiOutlinedInput-input {
+    max-height: 120px; /* Maximum height for the input area */
+    overflow-y: auto; /* Add vertical scroll if content exceeds height */
+    padding: 8px; /* Adjust padding for better spacing */
+}
