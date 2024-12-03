@@ -1,43 +1,67 @@
-# Project Functions Overview
+# List App
 
-This project includes the following key functions to manage categorized text data:
+## Beskrivning
 
-## Functionalities
+List App är en webbaserad applikation som gör det möjligt för användare att skapa, organisera och hantera listor med olika kategorier. Applikationen låter användaren lägga till nya kategorier, redigera och ta bort objekt inom en kategori, samt rensa data i en specifik kategori. Den är designad för att vara enkel och intuitiv att använda.
 
-### Text Submission
+## Funktioner
 
-- **Description**: Allows users to submit text with an associated category.
-- **Usage**: Users enter text in the input field, select a category, and click "Submit."
+### 1. Skapa nya kategorier
 
-### Category Management
+- **Beskrivning**: Användare kan skapa nya kategorier för att organisera data.
 
-1. **Add Category**
-   - **Description**: Allows users to create new categories for organizing text.
-   - **Usage**: Users can click "Add Category" to enter and add a new category.
+### 2. Visa data i en kategori
 
-2. **Delete Category**
-   - **Description**: Enables users to delete an existing category.
-   - **Usage**: Users select a category to delete and confirm the deletion.
+- **Beskrivning**: Användare kan välja en kategori och visa tillhörande data.
 
-3. **Select Category**
-   - **Description**: Users can choose a category to view only the data entries within that category.
-   - **Usage**: The selected category filters the displayed data accordingly.
+### 3. Lägg till nya objekt
 
-### Data Editing and Deletion
+- **Beskrivning**: Användare kan lägga till nya objekt till en specifik kategori.
 
-1. **Edit Entry**
-   - **Description**: Users can edit an existing text entry.
-   - **Usage**: Clicking "Edit" beside an entry allows the user to modify the text.
+### 4. Redigera och ta bort objekt
 
-2. **Delete Entry**
-   - **Description**: Users can delete an individual text entry.
-   - **Usage**: Clicking "X" beside an entry removes it from the list.
+- **Beskrivning**: Användare kan redigera texten i objekt eller ta bort dem från listan.
 
-### Clear Category
+### 5. Rensa data i en kategori
 
-- **Description**: Deletes all text entries within the currently selected category.
-- **Usage**: Users click "Clear all text in selected category" and confirm the action.
+- **Beskrivning**: Användare kan rensa all data inom en specifik kategori.
 
----
+### 6. Ta bort kategorier
 
-Each of these functions works with a server-side backend that updates a `data.json` file, allowing the text data to persist between sessions.
+- **Beskrivning**: Användare kan ta bort hela kategorier, förutom den förvalda kategorin "General".
+
+## Starta Appen
+
+### Starta utvecklingsservern:
+
+```bash
+npm start
+```
+
+## Användning
+
+### 1. Skapa en lista:
+
+- Fyll i textfältet med önskat objekt och välj en kategori.
+- Klicka på "Submit" för att lägga till objektet i den valda kategorin.
+
+### 2. Redigera och ta bort objekt:
+
+- Klicka på "Edit" för att ändra texten i ett objekt.
+- Klicka på "Delete" för att ta bort ett objekt från listan.
+
+### 3. Rensa data i en kategori:
+
+- Välj en kategori från dropdown-menyn och klicka på "Clear All Data In Category" för att rensa all data i den valda kategorin.
+
+### 4. Hantera kategorier:
+
+- Klicka på "Add Category" för att skapa en ny kategori.
+- Välj en kategori från dropdown-menyn och klicka på "Delete Selected Category" för att ta bort en kategori.
+
+## Teknologier
+
+- **React**: För användargränssnittet och komponentstruktur.
+- **Material-UI**: För styling och UI-komponenter.
+- **Axios**: För att hantera API-anrop.
+- **Node.js & Express**: Används på server-sidan för att hämta och spara data.
