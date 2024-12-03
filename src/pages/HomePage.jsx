@@ -1,12 +1,10 @@
-// src/pages/HomePage.jsx
-
-import React, { useState } from 'react'; // Importerar React och useState hook
-import CategoryManager from '../components/CategoryManager'; // Importerar CategoryManager-komponenten
-import { Box } from '@mui/material'; // Importerar Box-komponenten från Material-UI för layout
-import '../styles/HomePageStyles.css'; // Importerar CSS-styling för hemsidan
+import React, { useState } from 'react';
+import CategoryManager from '../components/CategoryManager';
+import { Box } from '@mui/material';
+import '../styles/HomePageStyles.css';
 
 const HomePage = () => {
-    // State för att hålla kategorierna på hemsidan, initialiseras med en standardkategori 'General'
+    // State för att hålla kategorierna på hemsidan, startar med en standardkategorin 'General'
     const [categories, setCategories] = useState(['General']);
 
     return (
@@ -21,4 +19,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage; // Exporterar komponenten för användning i andra delar av applikationen
+export default HomePage;

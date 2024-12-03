@@ -1,10 +1,8 @@
-// src/components/DataList.jsx
-
 import React from 'react';
 import { List, ListItem, ListItemText, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import '../styles/ListItemStyles.css'; // Importerar anpassad CSS för stil
+import '../styles/ListItemStyles.css';
 
 // DataList-komponenten som visar en lista av data och erbjuder alternativ för att redigera eller ta bort objekt
 const DataList = ({ filteredData, handleEdit, handleRemove }) => (
@@ -13,7 +11,7 @@ const DataList = ({ filteredData, handleEdit, handleRemove }) => (
         {filteredData.map((item, index) => (
             <ListItem
                 key={index} // Unikt nyckel för varje ListItem för att förbättra prestanda
-                className="custom-list-item" // Anpassad CSS-klass för ListItem
+                className="custom-list-item"
                 secondaryAction={
                     <>
                         {/* Ikonknapp för att redigera objektet */}
@@ -34,4 +32,4 @@ const DataList = ({ filteredData, handleEdit, handleRemove }) => (
     </List>
 );
 
-export default DataList; // Exporterar DataList-komponenten för användning i andra delar av applikationen
+export default DataList;

@@ -1,11 +1,9 @@
-// src/components/CategoryManager.jsx
-
 import React, { useState, useEffect } from 'react';
-import { fetchData, saveData } from '../api/dataService'; // Importerar API-funktioner
-import CustomForm from '../components/CustomForm'; // Importerar CustomForm-komponenten
-import CategorySelector from '../components/CategorySelector'; // Importerar CategorySelector-komponenten
-import DataList from '../components/DataList'; // Importerar DataList-komponenten
-import ActionButtons from '../components/ActionButtons'; // Importerar ActionButtons-komponenten
+import { fetchData, saveData } from '../api/dataService';
+import CustomForm from '../components/CustomForm';
+import CategorySelector from '../components/CategorySelector';
+import DataList from '../components/DataList';
+import ActionButtons from '../components/ActionButtons';
 
 // CategoryManager-komponenten som hanterar data och kategorier
 const CategoryManager = ({ categories, setCategories }) => {
@@ -87,7 +85,7 @@ const CategoryManager = ({ categories, setCategories }) => {
 
     // Funktion för att lägga till en ny kategori
     const handleAddCategory = () => {
-        const newCategory = prompt('Enter new category:'); // Frågar användaren om en ny kategori
+        const newCategory = prompt('Enter new category:'); // Ber användaren om att namnge den nya kategorin
         if (newCategory && !categories.includes(newCategory)) {
             setCategories([...categories, newCategory]); // Lägger till ny kategori i listan
         }
@@ -162,4 +160,4 @@ const CategoryManager = ({ categories, setCategories }) => {
     );
 };
 
-export default CategoryManager; // Exporterar CategoryManager-komponenten för användning i andra delar av applikationen
+export default CategoryManager;

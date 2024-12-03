@@ -1,5 +1,3 @@
-// src/components/ActionButtons.jsx
-
 import React from 'react';
 import { Button, Stack } from '@mui/material'; // Importerar Material-UI-komponenter
 import CategorySelector from './CategorySelector'; // Importerar CategorySelector-komponenten
@@ -19,10 +17,10 @@ const ActionButtons = ({
         {/* Knapp för att lägga till en ny kategori */}
         <Button
             variant="contained"
-            color="secondary" // Färg för knappen
-            size="small" // Storlek på knappen
-            fullWidth // Gör knappen fullbredd
-            onClick={handleAddCategory} // Funktion som körs vid klick
+            color="secondary" 
+            size="small" 
+            fullWidth 
+            onClick={handleAddCategory} 
         >
             Add Category
         </Button>
@@ -30,10 +28,10 @@ const ActionButtons = ({
         {/* Knapp för att rensa all data i den valda kategorin */}
         <Button
             variant="contained"
-            color="error" // Färg för knappen
-            size="small" // Storlek på knappen
-            fullWidth // Gör knappen fullbredd
-            onClick={handleClear} // Funktion som körs vid klick
+            color="error" 
+            size="small" 
+            fullWidth 
+            onClick={handleClear}
         >
             Clear All Data In Category
         </Button>
@@ -51,8 +49,8 @@ const ActionButtons = ({
         {/* Knapp för att ta bort den valda kategorin */}
         <Button
             variant="contained"
-            color="primary" // Färg för knappen
-            fullWidth // Gör knappen fullbredd
+            color="primary" 
+            fullWidth
             onClick={handleDeleteCategory} // Funktion som körs vid klick
             disabled={!categoryToDelete} // Knappen är inaktiverad om ingen kategori är vald
             sx={{ marginTop: '16px' }} // Extra avstånd ovanför knappen
@@ -62,4 +60,4 @@ const ActionButtons = ({
     </Stack>
 );
 
-export default ActionButtons; // Exporterar ActionButtons-komponenten för användning i andra delar av applikationen
+export default ActionButtons;

@@ -1,12 +1,10 @@
-// src/components/CategorySelector.jsx
-
 import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Box } from '@mui/material';
-import '../styles/FormAndCategoryStyles.css'; // Importerar anpassad CSS för stil
+import '../styles/FormAndCategoryStyles.css';
 
 // CategorySelector-komponenten som används för att välja en kategori
 const CategorySelector = ({ categories, category, setCategory }) => (
-    <Box sx={{ mt: 2 }}> {/* Lägg till en margin-top med hjälp av Material-UI:s Box */}
+    <Box sx={{ mt: 2 }}> {/* Lägger till en margin-top */}
         <FormControl fullWidth variant="outlined" className="custom-category-selector">
             {/* FormControl används för att ge en ram kring formulärfältet */}
             <InputLabel>Category</InputLabel> {/* Label för dropdown-menyn */}
@@ -26,4 +24,4 @@ const CategorySelector = ({ categories, category, setCategory }) => (
     </Box>
 );
 
-export default CategorySelector; // Exporterar CategorySelector-komponenten för användning i andra delar av applikationen
+export default CategorySelector;

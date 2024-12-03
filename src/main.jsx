@@ -7,7 +7,7 @@ import App from './App';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // Wrappas App-komponenten i BrowserRouter för att möjliggöra navigering med React Router
+    // Wrappar App-komponenten i BrowserRouter för att möjliggöra navigering med React Router
     <BrowserRouter>
         <App />
     </BrowserRouter>

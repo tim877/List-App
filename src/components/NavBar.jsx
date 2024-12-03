@@ -1,8 +1,6 @@
-// src/components/NavBar.jsx
-
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importerar Link-komponenten från React Router för navigering
-import '../styles/NavBar.css'; // Importerar anpassad CSS för stil
+import { Link } from 'react-router-dom';
+import '../styles/NavBar.css';
 
 // NavBar-komponenten som renderar navigeringsmenyn
 const NavBar = () => {
@@ -16,4 +14,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar; // Exporterar NavBar-komponenten för användning i andra delar av applikationen
+export default NavBar;

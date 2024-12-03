@@ -1,9 +1,7 @@
-// src/pages/DataPage.jsx
-
-import React, { useEffect, useState } from 'react'; // Importerar React och nödvändiga hooks
-import { fetchData } from '../api/dataService'; // Importerar funktionen för att hämta data från servern
-import { Container, Typography, List, ListItem, ListItemText, Paper } from '@mui/material'; // Importerar Material-UI-komponenter
-import '../styles/DataPage.css'; // Importerar CSS-styling för sidan
+import React, { useEffect, useState } from 'react';
+import { fetchData } from '../api/dataService';
+import { Container, Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import '../styles/DataPage.css';
 
 const DataPage = () => {
     // State för att hålla datan som hämtas från servern
@@ -22,7 +20,7 @@ const DataPage = () => {
             <Typography className="data-page-title" variant="h4" gutterBottom>
                 All Data
             </Typography>
-            {/* Papperskomponent för att omge listan och ge den ett stiligt utseende */}
+            {/* Papperskomponent för att omge listan */}
             <Paper className="data-paper">
                 {/* Lista som innehåller varje dataobjekt */}
                 <List className="data-list">
@@ -43,4 +41,4 @@ const DataPage = () => {
     );
 };
 
-export default DataPage; // Exporterar komponenten för användning i andra delar av applikationen
+export default DataPage;

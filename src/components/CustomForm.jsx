@@ -1,8 +1,6 @@
-// src/components/CustomForm.jsx
-
 import React from 'react';
 import { TextField, Button, Box, Stack } from '@mui/material';
-import '../styles/FormAndCategoryStyles.css'; // Importerar anpassad CSS för stil
+import '../styles/FormAndCategoryStyles.css';
 
 // CustomForm-komponenten som innehåller ett inmatningsfält och en submit-knapp
 const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
@@ -12,12 +10,12 @@ const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
             {/* Stack-komponenten används för att arrangera formfälten vertikalt med ett avstånd */}
             <TextField
                 label="Enter your text" // Label för inmatningsfältet
-                variant="outlined" // Stilvariant för TextField
-                size="small" // Storlek på TextField
+                variant="outlined" 
+                size="small" 
                 value={inputValue} // Värdet för inmatningsfältet
                 onChange={(e) => setInputValue(e.target.value)} // Uppdaterar inputValue vid ändring
-                fullWidth // Gör TextField fullbredd
-                className="custom-text-field" // Anpassad CSS-klass för TextField
+                fullWidth
+                className="custom-text-field"
             />
             <Button type="submit" variant="contained" color="success" fullWidth>
                 {/* Button-komponenten för att skicka in formuläret */}
@@ -27,4 +25,4 @@ const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
     </Box>
 );
 
-export default CustomForm; // Exporterar CustomForm-komponenten för användning i andra delar av applikationen
+export default CustomForm;
