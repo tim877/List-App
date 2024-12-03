@@ -4,7 +4,6 @@
 
 List App är en webbaserad applikation som gör det möjligt för användare att skapa, organisera och hantera listor med olika kategorier. Applikationen låter användaren lägga till nya kategorier, redigera och ta bort objekt inom en kategori, samt rensa data i en specifik kategori. Den är designad för att vara enkel och intuitiv att använda.
 
-
 ## Dependencies
 
 ```bash
@@ -16,27 +15,27 @@ npm install @mui/material @emotion/react @emotion/styled axios cors concurrently
 
 ### 1. Skapa nya kategorier
 
-- **Beskrivning**: Användare kan skapa nya kategorier för att organisera data.
+- Användare kan skapa nya kategorier för att organisera data.
 
 ### 2. Visa data i en kategori
 
-- **Beskrivning**: Användare kan välja en kategori och visa tillhörande data.
+- Användare kan välja en kategori och visa tillhörande data.
 
 ### 3. Lägg till nya objekt
 
-- **Beskrivning**: Användare kan lägga till nya objekt till en specifik kategori.
+- Användare kan lägga till nya objekt till en specifik kategori.
 
 ### 4. Redigera och ta bort objekt
 
-- **Beskrivning**: Användare kan redigera texten i objekt eller ta bort dem från listan.
+- Användare kan redigera texten i objekt eller ta bort dem från listan.
 
 ### 5. Rensa data i en kategori
 
-- **Beskrivning**: Användare kan rensa all data inom en specifik kategori.
+- Användare kan rensa all data inom en specifik kategori.
 
 ### 6. Ta bort kategorier
 
-- **Beskrivning**: Användare kan ta bort hela kategorier, förutom den förvalda kategorin "General".
+- Användare kan ta bort hela kategorier, förutom den förvalda kategorin "General".
 
 ## Starta Appen
 
