@@ -4,6 +4,14 @@
 
 List App är en webbaserad applikation som gör det möjligt för användare att skapa, organisera och hantera listor med olika kategorier. Applikationen låter användaren lägga till nya kategorier, redigera och ta bort objekt inom en kategori, samt rensa data i en specifik kategori. Den är designad för att vara enkel och intuitiv att använda.
 
+
+## Dependencies
+
+```bash
+npm install
+npm install @mui/material @emotion/react @emotion/styled axios cors concurrently react-router-dom
+```
+
 ## Funktioner
 
 ### 1. Skapa nya kategorier
