@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { fetchData } from '../api/dataService';
+import { fetchJsonData } from '../api/dataServiceAxios';
 import { Container, Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
 import '../styles/DataPage.css';
 
 const DataPage = () => {
-    // State för att hålla datan som hämtas från servern
+    // State to hold the data fetched from the server
     const [data, setData] = useState([]);
 
-    // Använd useEffect för att hämta data när komponenten monteras
+    // Use useEffect to fetch data when the component mounts
     useEffect(() => {
-        fetchData() // Hämtar data från servern
-            .then((data) => setData(data)) // Uppdaterar state med den hämtade datan
-            .catch((error) => console.error('Error fetching data:', error)); // Hanterar eventuella fel vid hämtning av data
-    }, []); // Tom array innebär att useEffect körs en gång när komponenten monteras
+        fetchJsonData() // Fetches data from the server
+            .then((data) => setData(data)) // Updates state with the fetched data
+            .catch((error) => console.error('Error fetching data:', error)); // Handles any errors during data fetching
+    }, []); // Empty array means the useEffect runs once when the component mounts
 
     return (
         <Container className="data-container">
-            {/* Titel för datainsamlingssidan */}
+            {/* Title for the data collection page */}
             <Typography className="data-page-title" variant="h4" gutterBottom>
                 All Data
             </Typography>
-            {/* Papperskomponent för att omge listan */}
+            {/* Paper component to surround the list */}
             <Paper className="data-paper">
-                {/* Lista som innehåller varje dataobjekt */}
+                {/* List containing each data object */}
                 <List className="data-list">
                     {data.map((item, index) => (
-                        // Skapar en listpost för varje objekt i datan
+                        // Creates a list item for each object in the data
                         <ListItem key={index} className="data-list-item">
                             <ListItemText
-                                // Visar texten från dataobjektet
+                                // Displays the text from the data object
                                 primary={<span className="data-item-text">{item.text}</span>}
-                                // Visar kategorin för dataobjektet
+                                // Displays the category of the data object
                                 secondary={<span className="data-item-category">{item.category}</span>}
                             />
                         </ListItem>

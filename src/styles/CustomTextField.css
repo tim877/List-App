@@ -1,17 +1,18 @@
+/* Container styling for the custom text field component */
 .custom-textfield-container {
     display: flex;
     flex-direction: column;
-    gap: 16px; 
+    gap: 16px;
     width: 100%; 
 }
 
-/* Styling for the TextField itself */
+/* Styling for the TextField component */
 .custom-textfield .MuiOutlinedInput-root {
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
     border-radius: 8px; 
 }
 
-/* Border color and hover effects */
+/* Border color and hover effects for the TextField */
 .custom-textfield .MuiOutlinedInput-root fieldset {
     border-color: #ccc; 
 }
@@ -24,7 +25,7 @@
     border-color: #3f51b5; 
 }
 
-/* Limit the height for multiline input */
+/* Styling for the input area within the TextField */
 .custom-textfield .MuiOutlinedInput-input {
     max-height: 5px; 
     overflow-y: auto; 

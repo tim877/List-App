@@ -3,7 +3,7 @@ import { TextField, Button, Box, Stack } from '@mui/material';
 import '../styles/FormAndCategoryStyles.css';
 
 // The CustomForm component contains an input field and a submit button
-const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
+const CustomForm = ({ formInputValue, setInputValue, handleSubmit }) => (
     <Box component="form" onSubmit={handleSubmit} className="form-container">
         {/* The Box component is used here to create a form with an onSubmit event */}
         <Stack spacing={2}>
@@ -12,7 +12,7 @@ const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
                 label="Enter your text" // Label for the input field
                 variant="outlined" 
                 size="small" 
-                value={inputValue} // Value for the input field
+                value={formInputValue} // Value for the input field
                 onChange={(e) => setInputValue(e.target.value)} // Updates inputValue on change
                 fullWidth
                 className="custom-text-field"

@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { fetchData, saveData } from '../api/dataService';
+import { fetchJsonData, saveJsonData } from '../api/dataServiceAxios';
 import CustomForm from '../components/CustomForm';
 import CategorySelector from '../components/CategorySelector';
 import DataList from '../components/DataList';
-import ActionButtons from '../components/ActionButtons';
+import CategoryActions from './CategoryActions';
 
 // The CategoryManager component that manages data and categories
 const CategoryManager = ({ categories, setCategories }) => {
     // State for various parts of the component
     const [category, setCategory] = useState('General');
-    const [categoryToDelete, setCategoryToDelete] = useState('');
-    const [inputValue, setInputValue] = useState('');
+    const [selectedCategoryToDelete, setCategoryToDelete] = useState('');
+    const [formInputValue, setInputValue] = useState('');
     const [data, setData] = useState([]);
 
     // useEffect hook to fetch data from the server when the component mounts
     useEffect(() => {
-        fetchData()
+        fetchJsonData()
             .then((data) => {
                 setData(data);
                 const uniqueCategories = Array.from(new Set(data.map((item) => item.category)));
@@ -31,23 +31,27 @@ const CategoryManager = ({ categories, setCategories }) => {
     // Function to submit data from the form
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!inputValue.trim()) return alert('Please enter valid input.'); // Input validation
-        const newData = { text: inputValue, category }; // Create new data object
-        const updatedList = [newData, ...data]; // Add new data to the beginning of the list
-        saveData(updatedList)
-            .then(() => setData(updatedList))
+        console.log('Before submit, inputValue:', formInputValue); // Debug log
+        if (!formInputValue.trim()) return alert('Please enter valid input.');
+        const newData = { text: formInputValue, category };
+        const updatedList = [newData, ...data];
+        saveJsonData(updatedList)
+            .then(() => {
+                setData(updatedList);
+                setInputValue('');
+                console.log('After submit, inputValue should be cleared:', formInputValue); // Debug log
+            })
             .catch((error) => {
                 console.error('Error saving data:', error);
                 alert('Failed to save data. Please try again later.');
             });
-        setInputValue(''); // Clear input field after submission
     };
 
     // Function to clear all data in the selected category
-    const handleClear = () => {
+    const handleClearCategoryData = () => {
         if (window.confirm(`Are you sure you want to clear all items in "${category}"?`)) {
             const updatedList = data.filter((item) => item.category !== category); // Create a list excluding the selected category
-            saveData(updatedList)
+            saveJsonData(updatedList)
                 .then(() => setData(updatedList))
                 .catch((error) => {
                     console.error('Error clearing data:', error);
@@ -57,9 +61,9 @@ const CategoryManager = ({ categories, setCategories }) => {
     };
 
     // Function to remove a specific data object
-    const handleRemove = (itemToRemove) => {
+    const handleRemoveSpecificData = (itemToRemove) => {
         const updatedList = data.filter((item) => item !== itemToRemove); // Filter out the object
-        saveData(updatedList)
+        saveJsonData(updatedList)
             .then(() => setData(updatedList))
             .catch((error) => {
                 console.error('Error removing data:', error);
@@ -68,13 +72,13 @@ const CategoryManager = ({ categories, setCategories }) => {
     };
 
     // Function to edit a specific data object
-    const handleEdit = (itemToEdit) => {
+    const handleEditSpecificData = (itemToEdit) => {
         const newText = prompt('Edit your text:', itemToEdit.text); // Prompt user to edit text
         if (newText !== null) {
             const updatedList = data.map((item) =>
                 item === itemToEdit ? { ...item, text: newText } : item // Update text for the object
             );
-            saveData(updatedList)
+            saveJsonData(updatedList)
                 .then(() => setData(updatedList))
                 .catch((error) => {
                     console.error('Error editing data:', error);
@@ -93,18 +97,18 @@ const CategoryManager = ({ categories, setCategories }) => {
 
     // Function to delete a category
     const handleDeleteCategory = () => {
-        if (!categoryToDelete || categoryToDelete === 'General') {
+        if (!selectedCategoryToDelete || selectedCategoryToDelete === 'General') {
             return alert('Cannot delete General.'); // Prevent deleting the 'General' category
         }
-        if (window.confirm(`Are you sure you want to delete category "${categoryToDelete}"?`)) {
-            const updatedCategories = categories.filter((cat) => cat !== categoryToDelete); // Filter out the selected category
+        if (window.confirm(`Are you sure you want to delete category "${selectedCategoryToDelete}"?`)) {
+            const updatedCategories = categories.filter((cat) => cat !== selectedCategoryToDelete); // Filter out the selected category
             setCategories(updatedCategories);
 
-            const updatedData = data.filter((item) => item.category !== categoryToDelete); // Filter out data in the selected category
+            const updatedData = data.filter((item) => item.category !== selectedCategoryToDelete); // Filter out data in the selected category
             setData(updatedData);
 
-            if (category === categoryToDelete) setCategory('General'); // Reset category to 'General' if the deleted one is currently selected
-            saveData(updatedData)
+            if (category === selectedCategoryToDelete) setCategory('General'); // Reset category to 'General' if the deleted one is currently selected
+            saveJsonData(updatedData)
                 .catch((error) => {
                     console.error('Error deleting category:', error);
                     alert('Failed to delete category. Please try again later.');
@@ -119,15 +123,15 @@ const CategoryManager = ({ categories, setCategories }) => {
         <div>
             {/* Form for data input */}
             <CustomForm
-                inputValue={inputValue}
+                formInputValue={formInputValue}
                 setInputValue={setInputValue}
                 handleSubmit={handleSubmit}
                 categories={categories}
-                categoryToDelete={categoryToDelete}
+                categoryToDelete={selectedCategoryToDelete}
                 setCategoryToDelete={setCategoryToDelete}
                 handleDeleteCategory={handleDeleteCategory}
                 handleAddCategory={handleAddCategory}
-                handleClear={handleClear}
+                handleClear={handleClearCategoryData }
             />
 
             {/* Category selector */}
@@ -141,16 +145,16 @@ const CategoryManager = ({ categories, setCategories }) => {
             {/* List of data */}
             <DataList
                 filteredData={filteredData}
-                handleEdit={handleEdit}
-                handleRemove={handleRemove}
+                handleEdit={handleEditSpecificData}
+                handleRemove={handleRemoveSpecificData}
             />
 
-            {/* Action buttons */}
-            <ActionButtons
-                handleClear={handleClear}
+            {/* Category Actions */}
+            <CategoryActions
+                handleClear={handleClearCategoryData }
                 handleAddCategory={handleAddCategory}
                 handleDeleteCategory={handleDeleteCategory}
-                categoryToDelete={categoryToDelete}
+                categoryToDelete={selectedCategoryToDelete}
                 setCategoryToDelete={setCategoryToDelete}
                 categories={categories}
                 category={category}

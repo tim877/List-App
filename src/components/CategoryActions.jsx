@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Stack } from '@mui/material'; // Importing Material-UI components
 import CategorySelector from './CategorySelector'; // Importing the CategorySelector component
 
-// ActionButtons component that receives various functions and state from the parent
-const ActionButtons = ({
+// CategoryActions component that receives various functions and state from the parent
+const CategoryActions = ({
     handleClear, // Function to clear all data in the selected category
     handleAddCategory, // Function to add a new category
     handleDeleteCategory, // Function to delete the selected category
@@ -12,7 +12,7 @@ const ActionButtons = ({
     categories, // List of all categories
 }) => (
     <Stack spacing={2} direction="column">
-        {/* Buttons and components for various actions */}
+        {/* Buttons and components for managing categories */}
 
         {/* Button to add a new category */}
         <Button
@@ -60,4 +60,4 @@ const ActionButtons = ({
     </Stack>
 );
 
-export default ActionButtons;
+export default CategoryActions;

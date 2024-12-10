@@ -1,18 +1,21 @@
+/* Container styling for the home page */
 .home-page-container {
-    max-width: 30%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e8a;
-    border-radius: 4px;
-    margin-top: 50px;
+    max-width: 30%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #1e1e1e8a; 
+    border-radius: 4px; 
+    margin-top: 50px; 
 }
 
+/* Styling for the title text */
 .title {
-    text-align: center;
+    text-align: center; 
 }
 
+/* Container styling for the centered box */
 .centered-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }

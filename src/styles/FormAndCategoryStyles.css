@@ -1,6 +1,4 @@
-/* Custom styles for input fields and dropdowns */
-
-/* Text Input */
+/* Container styling for text input field */
 .custom-text-field .MuiOutlinedInput-root {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -8,37 +6,44 @@
     border: 1px solid #4a4a4a;
 }
 
+/* Hover effect styling for the text input field */
 .custom-text-field .MuiOutlinedInput-root:hover {
     background-color: #2a2a2a;
 }
 
+/* Styling for the notched outline of the text input field */
 .custom-text-field .MuiOutlinedInput-notchedOutline {
     border-color: #4a4a4a;
 }
 
+/* Label styling for the text input field */
 .custom-text-field .MuiInputLabel-root {
     color: #bfbfbf;
 }
 
-/* Category Dropdown */
+/* Container styling for the category dropdown */
 .custom-category-selector .MuiOutlinedInput-root {
     background-color: #1e1e1e;
     color: #ffffff;
     border-radius: 4px;
 }
 
+/* Hover effect styling for the category dropdown */
 .custom-category-selector .MuiOutlinedInput-root:hover {
     background-color: #2a2a2a;
 }
 
+/* Styling for the notched outline of the category dropdown */
 .custom-category-selector .MuiOutlinedInput-notchedOutline {
     border-color: #4a4a4a;
 }
 
+/* Label styling for the category dropdown */
 .custom-category-selector .MuiInputLabel-root {
     color: #bfbfbf;
 }
-/* Custom styles for "Category to Delete" dropdown */
+
+/* Container styling for the "Category to Delete" dropdown */
 .custom-delete-category .MuiOutlinedInput-root {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -46,32 +51,37 @@
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect styling for the "Category to Delete" dropdown */
 .custom-delete-category .MuiOutlinedInput-root:hover {
     background-color: #2a2a2a;
 }
 
+/* Styling for the notched outline of the "Category to Delete" dropdown */
 .custom-delete-category .MuiOutlinedInput-notchedOutline {
     border-color: #4a4a4a;
 }
 
+/* Label styling for the "Category to Delete" dropdown */
 .custom-delete-category .MuiInputLabel-root {
-    color: #bfbfbf; 
+    color: #bfbfbf;
 }
 
+/* Styling for menu items in the "Category to Delete" dropdown */
 .custom-delete-category .MuiMenuItem-root {
-    background-color: #1e1e1e; 
-    color: #ffffff; 
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
+/* Hover effect styling for menu items in the "Category to Delete" dropdown */
 .custom-delete-category .MuiMenuItem-root:hover {
-    background-color: #2a2a2a; 
+    background-color: #2a2a2a;
 }
 
+/* Container styling for shared content */
 .shared-container {
-    background-color: #2a2a2a; 
-    border-radius: 8px; 
-    padding: 16px; 
-    margin-bottom: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
