@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CategoryManager from '../components/CategoryManager';
 import { Box } from '@mui/material';
-import '../styles/HomePageStyles.css';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
     // State to hold the categories on the homepage, starts with a default category 'General'

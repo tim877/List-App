@@ -2,7 +2,7 @@ import React from 'react';
 import { List, ListItem, ListItemText, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import '../styles/ListItemStyles.css';
+import '../styles/ListItem.css';
 
 // The DataList component displays a list of data and provides options to edit or remove items
 const DataList = ({ filteredData, handleEdit, handleRemove }) => (

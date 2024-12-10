@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField, Button, Box, Stack } from '@mui/material';
-import '../styles/FormAndCategoryStyles.css';
+import '../styles/FormAndCategory.css';
 
 // The CustomForm component contains an input field and a submit button
 const CustomForm = ({ formInputValue, setInputValue, handleSubmit }) => (

@@ -1,4 +1,6 @@
-/* Container styling for text input field */
+/* --- Form Styling --- */
+
+/* Container styling for the text input field */
 .custom-text-field .MuiOutlinedInput-root {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -21,6 +23,8 @@
     color: #bfbfbf;
 }
 
+/* --- Category Selector Styling --- */
+
 /* Container styling for the category dropdown */
 .custom-category-selector .MuiOutlinedInput-root {
     background-color: #1e1e1e;
@@ -42,6 +46,8 @@
 .custom-category-selector .MuiInputLabel-root {
     color: #bfbfbf;
 }
+
+/* --- Category to Delete Dropdown Styling --- */
 
 /* Container styling for the "Category to Delete" dropdown */
 .custom-delete-category .MuiOutlinedInput-root {
@@ -77,7 +83,9 @@
     background-color: #2a2a2a;
 }
 
-/* Container styling for shared content */
+/* --- Shared Styling for Containers --- */
+
+/* Styling for shared content container */
 .shared-container {
     background-color: #2a2a2a;
     border-radius: 8px;

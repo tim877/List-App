@@ -139,7 +139,7 @@ const CategoryManager = ({ categories, setCategories }) => {
                 categories={categories}
                 category={category}
                 setCategory={setCategory}
-                label="Select Category"
+                label="Select a List to Add Your Text"
             />
 
             {/* List of data */}

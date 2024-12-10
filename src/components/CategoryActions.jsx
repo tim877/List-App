@@ -36,14 +36,12 @@ const CategoryActions = ({
             Clear All Data In Category
         </Button>
 
-        {/* Text to instruct the user to select a category to delete */}
-        <p>Select a category to delete</p>
-
         {/* Dropdown to select a category to delete, uses the CategorySelector component */}
         <CategorySelector
             categories={categories} // List of all categories
             category={categoryToDelete} // The selected category
             setCategory={setCategoryToDelete} // Function to update the selected category
+            label="Select a category to delete" // Custom label for deletion context
         />
 
         {/* Button to delete the selected category */}
