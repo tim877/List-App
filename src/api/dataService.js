@@ -1,30 +1,30 @@
-import axios from 'axios'; // Importerar axios för att göra HTTP-förfrågningar
+import axios from 'axios'; // Importing axios for making HTTP requests
 
-// Bas-URL för serverns API-endpoint
+// Base URL for the server's API endpoint
 const baseUrl = 'http://localhost:5001/data';
 
-// Funktion för att hämta data från servern
+// Function to fetch data from the server
 export const fetchData = async () => {
 	try {
-		// Gör en GET-förfrågan till servern och väntar på svaret
+		// Making a GET request to the server and awaiting the response
 		const response = await axios.get(baseUrl);
-		return response.data; // Returnerar data från servern
+		return response.data; // Returning data from the server
 	} catch (error) {
-		// Om ett fel inträffar vid hämtning av data, loggas det till konsolen och kastas vidare
+		// If an error occurs while fetching data, log it to the console and rethrow it
 		console.error('Error fetching data:', error.message || error);
-		throw error; // Kastar felet vidare för att kunna hantera det i komponenten
+		throw error; // Rethrow the error to handle it in the component
 	}
 };
 
-// Funktion för att spara eller uppdatera data på servern
+// Function to save or update data on the server
 export const saveData = async (newData) => {
 	try {
-		// Gör en POST-förfrågan för att skicka den nya datan till servern
+		// Making a POST request to send the new data to the server
 		await axios.post(baseUrl, newData);
-		console.log('Data saved successfully'); // Loggar en bekräftelse när datan är sparad
+		console.log('Data saved successfully'); // Logging confirmation when data is saved
 	} catch (error) {
-		// Om ett fel inträffar vid sparandet av data, loggas det till konsolen och kastas vidare
+		// If an error occurs while saving data, log it to the console and rethrow it
 		console.error('Error saving data:', error.message || error);
-		throw error; // Kastar felet vidare för att kunna hantera det i komponenten
+		throw error; // Rethrow the error to handle it in the component
 	}
 };

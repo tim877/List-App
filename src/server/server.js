@@ -1,56 +1,56 @@
-// Importerar nödvändiga moduler: express för servern, cors för att hantera CORS, fs/promises för att arbeta med filsystemet, och path för fil- och kataloghantering.
+// Imports necessary modules: express for the server, cors for handling CORS, fs/promises for file system operations, and path for file and directory management.
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Skapar en ny instans av express-applikationen.
+// Creates a new instance of the express application.
 const app = express();
-const PORT = 5001; // Definierar porten servern ska lyssna på
+const PORT = 5001; // Defines the port the server will listen on
 
-// Aktiverar CORS för alla rutter, vilket gör att förfrågningar från olika domäner kan accepteras
+// Enables CORS for all routes, allowing requests from different domains to be accepted
 app.use(cors());
 
-// Middleware för att automatiskt parsa inkommande JSON-data i förfrågningar
+// Middleware to automatically parse incoming JSON data in requests
 app.use(express.json());
 
-// Bestämmer sökvägen till den aktuella filen och hämtar mappen där den finns.
+// Determines the path of the current file and retrieves the directory it resides in.
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Definierar sökvägen till datafilen (data.json).
+// Defines the path to the data file (data.json).
 const jsonFilePath = path.join(__dirname, 'data.json');
 
-// Skapar en GET-rutt för att hämta data från servern.
+// Creates a GET route to fetch data from the server.
 app.get('/data', async (req, res) => {
 	try {
-		// Läser innehållet från data.json-filen och skickar det som JSON-svar.
+		// Reads the content from the data.json file and sends it as a JSON response.
 		const data = await fs.readFile(jsonFilePath, 'utf8');
 		res.json(JSON.parse(data));
 	} catch (err) {
-		// Fångar och loggar eventuella fel vid läsning av filen och skickar ett 500-felmeddelande till klienten.
+		// Captures and logs any errors when reading the file and sends a 500 error message to the client.
 		console.error('Error reading data:', err);
 		res.status(500).send('Error reading data');
 	}
 });
 
-// Skapar en POST-rutt för att spara data till servern.
+// Creates a POST route to save data to the server.
 app.post('/data', async (req, res) => {
 	try {
-		// Hämtar data från requestens body.
+		// Retrieves data from the request body.
 		const newData = req.body;
-		// Skriver den nya datan till data.json-filen.
+		// Writes the new data to the data.json file.
 		await fs.writeFile(jsonFilePath, JSON.stringify(newData, null, 2));
 		res.send('Data saved successfully');
 	} catch (err) {
-		// Fångar och loggar eventuella fel vid skrivning till filen och skickar ett 500-felmeddelande till klienten.
+		// Captures and logs any errors when writing to the file and sends a 500 error message to the client.
 		console.error('Error writing data:', err);
 		res.status(500).send('Error writing data');
 	}
 });
 
-// Startar servern och skriver ut ett meddelande om att servern är igång.
+// Starts the server and logs a message indicating the server is running.
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`);
 });

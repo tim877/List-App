@@ -1,8 +1,8 @@
 # List App
 
-## Beskrivning
+## Description
 
-List App är en webbaserad applikation som gör det möjligt för användare att skapa, organisera och hantera listor med olika kategorier. Applikationen låter användaren lägga till nya kategorier, redigera och ta bort objekt inom en kategori, samt rensa data i en specifik kategori. Den är designad för att vara enkel och intuitiv att använda.
+List App is a web-based application that allows users to create, organize, and manage lists with different categories. The application enables users to add new categories, edit and delete items within a category, and clear data in a specific category. It is designed to be simple and intuitive to use.
 
 ## Dependencies
 
@@ -11,35 +11,35 @@ npm install
 npm install @mui/material @emotion/react @emotion/styled axios cors concurrently react-router-dom
 ```
 
-## Funktioner
+## Features
 
-### 1. Skapa nya kategorier
+### 1. Create New Categories
 
-- Användare kan skapa nya kategorier för att organisera data.
+- Users can create new categories to organize data.
 
-### 2. Visa data i en kategori
+### 2. View Data in a Category
 
-- Användare kan välja en kategori och visa tillhörande data.
+- Users can select a category and view the associated data.
 
-### 3. Lägg till nya objekt
+### 3. Add New Items
 
-- Användare kan lägga till nya objekt till en specifik kategori.
+- Users can add new items to a specific category.
 
-### 4. Redigera och ta bort objekt
+### 4. Edit and Delete Items
 
-- Användare kan redigera texten i objekt eller ta bort dem från listan.
+- Users can edit the text of items or delete them from the list.
 
-### 5. Rensa data i en kategori
+### 5. Clear Data in a Category
 
-- Användare kan rensa all data inom en specifik kategori.
+- Users can clear all data within a specific category.
 
-### 6. Ta bort kategorier
+### 6. Delete Categories
 
-- Användare kan ta bort hela kategorier, förutom den förvalda kategorin "General".
+- Users can delete entire categories, except for the default "General" category.
 
-## Starta Appen
+## Start the App
 
-### Starta utvecklingsservern:
+### Start the Development Server:
 
 ```bash
 npm start
@@ -47,28 +47,28 @@ npm start
 
 ## Användning
 
-### 1. Skapa en lista:
+### 1. Create a List:
 
-- Fyll i textfältet med önskat objekt och välj en kategori.
-- Klicka på "Submit" för att lägga till objektet i den valda kategorin.
+- Fill in the text field with the desired item and select a category.
+- Click "Submit" to add the item to the selected category.
 
-### 2. Redigera och ta bort objekt:
+### 2. Edit and Delete Items:
 
-- Klicka på "Edit" för att ändra texten i ett objekt.
-- Klicka på "Delete" för att ta bort ett objekt från listan.
+- Click "Edit" to change the text of an item.
+- Click "Delete" to remove an item from the list.
 
-### 3. Rensa data i en kategori:
+### 3. Clear Data in a Category:
 
-- Välj en kategori från dropdown-menyn och klicka på "Clear All Data In Category" för att rensa all data i den valda kategorin.
+- Select a category from the dropdown menu and click "Clear All Data In Category" to clear all data in the selected category.
 
-### 4. Hantera kategorier:
+### 4. Manage Categories:
 
-- Klicka på "Add Category" för att skapa en ny kategori.
-- Välj en kategori från dropdown-menyn och klicka på "Delete Selected Category" för att ta bort en kategori.
+- Click "Add Category" to create a new category.
+- Select a category from the dropdown menu and click "Delete Selected Category" to remove a category.
 
-## Teknologier
+## Technologies
 
-- **React**: För användargränssnittet och komponentstruktur.
-- **Material-UI**: För styling och UI-komponenter.
-- **Axios**: För att hantera API-anrop.
-- **Node.js & Express**: Används på server-sidan för att hämta och spara data.
+- **React**: For the user interface and component structure.
+- **Material-UI**: For styling and UI components.
+- **Axios**: For handling API requests.
+- **Node.js & Express**: Used on the server-side for fetching and saving data.

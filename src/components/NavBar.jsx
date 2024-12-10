@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/NavBar.css';
 
-// NavBar-komponenten som renderar navigeringsmenyn
+// The NavBar component renders the navigation menu
 const NavBar = () => {
     return (
-        <nav className="navbar"> {/* Container för navigeringsmenyn */}
-            {/* Länk till startsidan */}
+        <nav className="navbar"> {/* Container for the navigation menu */}
+            {/* Link to the home page */}
             <Link to="/" className="nav-link">Home</Link>
-            {/* Länk till sidan för att visa all data */}
+            {/* Link to the page for viewing all data */}
             <Link to="/data" className="nav-link">View All Data</Link>
         </nav>
     );

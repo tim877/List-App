@@ -1,59 +1,59 @@
 import React from 'react';
-import { Button, Stack } from '@mui/material'; // Importerar Material-UI-komponenter
-import CategorySelector from './CategorySelector'; // Importerar CategorySelector-komponenten
+import { Button, Stack } from '@mui/material'; // Importing Material-UI components
+import CategorySelector from './CategorySelector'; // Importing the CategorySelector component
 
-// ActionButtons-komponenten som tar emot olika funktioner och state från föräldern
+// ActionButtons component that receives various functions and state from the parent
 const ActionButtons = ({
-    handleClear, // Funktion för att rensa alla data i den valda kategorin
-    handleAddCategory, // Funktion för att lägga till en ny kategori
-    handleDeleteCategory, // Funktion för att ta bort den valda kategorin
-    categoryToDelete, // Den kategori som är vald att tas bort
-    setCategoryToDelete, // Funktion för att uppdatera den valda kategorin
-    categories, // Lista över alla kategorier
+    handleClear, // Function to clear all data in the selected category
+    handleAddCategory, // Function to add a new category
+    handleDeleteCategory, // Function to delete the selected category
+    categoryToDelete, // The category selected for deletion
+    setCategoryToDelete, // Function to update the selected category
+    categories, // List of all categories
 }) => (
     <Stack spacing={2} direction="column">
-        {/* Knappar och komponenter för olika åtgärder */}
+        {/* Buttons and components for various actions */}
 
-        {/* Knapp för att lägga till en ny kategori */}
+        {/* Button to add a new category */}
         <Button
             variant="contained"
-            color="secondary" 
-            size="small" 
-            fullWidth 
-            onClick={handleAddCategory} 
+            color="secondary"
+            size="small"
+            fullWidth
+            onClick={handleAddCategory}
         >
             Add Category
         </Button>
 
-        {/* Knapp för att rensa all data i den valda kategorin */}
+        {/* Button to clear all data in the selected category */}
         <Button
             variant="contained"
-            color="error" 
-            size="small" 
-            fullWidth 
+            color="error"
+            size="small"
+            fullWidth
             onClick={handleClear}
         >
             Clear All Data In Category
         </Button>
 
-        {/* Text för att instruera användaren att välja en kategori att ta bort */}
+        {/* Text to instruct the user to select a category to delete */}
         <p>Select a category to delete</p>
 
-        {/* Dropdown för att välja kategori att ta bort, använder CategorySelector-komponenten */}
+        {/* Dropdown to select a category to delete, uses the CategorySelector component */}
         <CategorySelector
-            categories={categories} // Lista över alla kategorier
-            category={categoryToDelete} // Den valda kategorin
-            setCategory={setCategoryToDelete} // Funktion för att uppdatera den valda kategorin
+            categories={categories} // List of all categories
+            category={categoryToDelete} // The selected category
+            setCategory={setCategoryToDelete} // Function to update the selected category
         />
 
-        {/* Knapp för att ta bort den valda kategorin */}
+        {/* Button to delete the selected category */}
         <Button
             variant="contained"
-            color="primary" 
+            color="primary"
             fullWidth
-            onClick={handleDeleteCategory} // Funktion som körs vid klick
-            disabled={!categoryToDelete} // Knappen är inaktiverad om ingen kategori är vald
-            sx={{ marginTop: '16px' }} // Extra avstånd ovanför knappen
+            onClick={handleDeleteCategory} // Function to execute on click
+            disabled={!categoryToDelete} // Button is disabled if no category is selected
+            sx={{ marginTop: '16px' }} // Extra spacing above the button
         >
             Delete Selected Category
         </Button>

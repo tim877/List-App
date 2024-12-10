@@ -2,23 +2,23 @@ import React from 'react';
 import { TextField, Button, Box, Stack } from '@mui/material';
 import '../styles/FormAndCategoryStyles.css';
 
-// CustomForm-komponenten som innehåller ett inmatningsfält och en submit-knapp
+// The CustomForm component contains an input field and a submit button
 const CustomForm = ({ inputValue, setInputValue, handleSubmit }) => (
     <Box component="form" onSubmit={handleSubmit} className="form-container">
-        {/* Box-komponenten används här för att skapa ett formulär med onSubmit-händelse */}
+        {/* The Box component is used here to create a form with an onSubmit event */}
         <Stack spacing={2}>
-            {/* Stack-komponenten används för att arrangera formfälten vertikalt med ett avstånd */}
+            {/* The Stack component is used to arrange the form fields vertically with spacing */}
             <TextField
-                label="Enter your text" // Label för inmatningsfältet
+                label="Enter your text" // Label for the input field
                 variant="outlined" 
                 size="small" 
-                value={inputValue} // Värdet för inmatningsfältet
-                onChange={(e) => setInputValue(e.target.value)} // Uppdaterar inputValue vid ändring
+                value={inputValue} // Value for the input field
+                onChange={(e) => setInputValue(e.target.value)} // Updates inputValue on change
                 fullWidth
                 className="custom-text-field"
             />
             <Button type="submit" variant="contained" color="success" fullWidth>
-                {/* Button-komponenten för att skicka in formuläret */}
+                {/* Button component for submitting the form */}
                 Submit
             </Button>
         </Stack>

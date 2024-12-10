@@ -2,18 +2,18 @@ import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Box } from '@mui/material';
 import '../styles/FormAndCategoryStyles.css';
 
-// CategorySelector-komponenten som används för att välja en kategori
+// The CategorySelector component used to select a category
 const CategorySelector = ({ categories, category, setCategory }) => (
-    <Box sx={{ mt: 2 }}> {/* Lägger till en margin-top */}
+    <Box sx={{ mt: 2 }}> {/* Adds a margin-top */}
         <FormControl fullWidth variant="outlined" className="custom-category-selector">
-            {/* FormControl används för att ge en ram kring formulärfältet */}
-            <InputLabel>Category</InputLabel> {/* Label för dropdown-menyn */}
+            {/* FormControl is used to provide a frame around the form field */}
+            <InputLabel>Category</InputLabel> {/* Label for the dropdown menu */}
             <Select
-                value={category} // Värdet för dropdown-menyn är den aktuella kategorin
-                onChange={(e) => setCategory(e.target.value)} // Uppdaterar kategorin vid ändring
+                value={category} // The value of the dropdown menu is the current category
+                onChange={(e) => setCategory(e.target.value)} // Updates the category on change
                 label="Category"
             >
-                {/* Renderar en lista av MenuItem-komponenter för varje kategori */}
+                {/* Renders a list of MenuItem components for each category */}
                 {categories.map((cat, index) => (
                     <MenuItem key={index} value={cat}>
                         {cat}

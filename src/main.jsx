@@ -1,13 +1,13 @@
-// Importerar React och ReactDOM för att kunna rendera appen i webbläsaren
+// Imports React and ReactDOM to render the app in the browser.
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// Importerar BrowserRouter från react-router-dom för att hantera routing i applikationen
+// Imports BrowserRouter from react-router-dom to handle routing in the application.
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // Wrappar App-komponenten i BrowserRouter för att möjliggöra navigering med React Router
+    // Wraps the App component in BrowserRouter to enable navigation with React Router
     <BrowserRouter>
         <App />
     </BrowserRouter>

@@ -5,15 +5,15 @@ import CategorySelector from '../components/CategorySelector';
 import DataList from '../components/DataList';
 import ActionButtons from '../components/ActionButtons';
 
-// CategoryManager-komponenten som hanterar data och kategorier
+// The CategoryManager component that manages data and categories
 const CategoryManager = ({ categories, setCategories }) => {
-    // State för olika delar av komponenten
+    // State for various parts of the component
     const [category, setCategory] = useState('General');
     const [categoryToDelete, setCategoryToDelete] = useState('');
     const [inputValue, setInputValue] = useState('');
     const [data, setData] = useState([]);
 
-    // useEffect-hook för att hämta data från servern vid komponentens montering
+    // useEffect hook to fetch data from the server when the component mounts
     useEffect(() => {
         fetchData()
             .then((data) => {
@@ -26,27 +26,27 @@ const CategoryManager = ({ categories, setCategories }) => {
                 console.error('Error fetching data:', error);
                 alert('Failed to fetch data. Please check your connection or try again later.');
             });
-    }, [setCategories]); // Dependency array för att köra useEffect vid ändring av setCategories
+    }, [setCategories]); // Dependency array to run useEffect when setCategories changes
 
-    // Funktion för att skicka in data från formuläret
+    // Function to submit data from the form
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!inputValue.trim()) return alert('Please enter valid input.'); // Validering av input
-        const newData = { text: inputValue, category }; // Skapar ny dataobjekt
-        const updatedList = [newData, ...data]; // Lägger till ny data i början av listan
+        if (!inputValue.trim()) return alert('Please enter valid input.'); // Input validation
+        const newData = { text: inputValue, category }; // Create new data object
+        const updatedList = [newData, ...data]; // Add new data to the beginning of the list
         saveData(updatedList)
             .then(() => setData(updatedList))
             .catch((error) => {
                 console.error('Error saving data:', error);
                 alert('Failed to save data. Please try again later.');
             });
-        setInputValue(''); // Tömmer inputfältet efter inlämning
+        setInputValue(''); // Clear input field after submission
     };
 
-    // Funktion för att rensa all data i den valda kategorin
+    // Function to clear all data in the selected category
     const handleClear = () => {
         if (window.confirm(`Are you sure you want to clear all items in "${category}"?`)) {
-            const updatedList = data.filter((item) => item.category !== category); // Skapar en lista utan data i vald kategori
+            const updatedList = data.filter((item) => item.category !== category); // Create a list excluding the selected category
             saveData(updatedList)
                 .then(() => setData(updatedList))
                 .catch((error) => {
@@ -56,9 +56,9 @@ const CategoryManager = ({ categories, setCategories }) => {
         }
     };
 
-    // Funktion för att ta bort en specifik dataobjekt
+    // Function to remove a specific data object
     const handleRemove = (itemToRemove) => {
-        const updatedList = data.filter((item) => item !== itemToRemove); // Filtrerar bort objektet
+        const updatedList = data.filter((item) => item !== itemToRemove); // Filter out the object
         saveData(updatedList)
             .then(() => setData(updatedList))
             .catch((error) => {
@@ -67,12 +67,12 @@ const CategoryManager = ({ categories, setCategories }) => {
             });
     };
 
-    // Funktion för att redigera en specifik dataobjekt
+    // Function to edit a specific data object
     const handleEdit = (itemToEdit) => {
-        const newText = prompt('Edit your text:', itemToEdit.text); // Användare kan redigera texten
+        const newText = prompt('Edit your text:', itemToEdit.text); // Prompt user to edit text
         if (newText !== null) {
             const updatedList = data.map((item) =>
-                item === itemToEdit ? { ...item, text: newText } : item // Uppdaterar texten för objektet
+                item === itemToEdit ? { ...item, text: newText } : item // Update text for the object
             );
             saveData(updatedList)
                 .then(() => setData(updatedList))
@@ -83,27 +83,27 @@ const CategoryManager = ({ categories, setCategories }) => {
         }
     };
 
-    // Funktion för att lägga till en ny kategori
+    // Function to add a new category
     const handleAddCategory = () => {
-        const newCategory = prompt('Enter new category:'); // Ber användaren om att namnge den nya kategorin
+        const newCategory = prompt('Enter new category:'); // Prompt user to name the new category
         if (newCategory && !categories.includes(newCategory)) {
-            setCategories([...categories, newCategory]); // Lägger till ny kategori i listan
+            setCategories([...categories, newCategory]); // Add new category to the list
         }
     };
 
-    // Funktion för att ta bort en kategori
+    // Function to delete a category
     const handleDeleteCategory = () => {
         if (!categoryToDelete || categoryToDelete === 'General') {
-            return alert('Cannot delete General.'); // Hindrar borttagning av 'General'-kategorin
+            return alert('Cannot delete General.'); // Prevent deleting the 'General' category
         }
         if (window.confirm(`Are you sure you want to delete category "${categoryToDelete}"?`)) {
-            const updatedCategories = categories.filter((cat) => cat !== categoryToDelete); // Filtrerar bort den valda kategorin
+            const updatedCategories = categories.filter((cat) => cat !== categoryToDelete); // Filter out the selected category
             setCategories(updatedCategories);
 
-            const updatedData = data.filter((item) => item.category !== categoryToDelete); // Filtrerar bort data i den valda kategorin
+            const updatedData = data.filter((item) => item.category !== categoryToDelete); // Filter out data in the selected category
             setData(updatedData);
 
-            if (category === categoryToDelete) setCategory('General'); // Återställer kategorin till 'General' om den borttagna är den aktuella
+            if (category === categoryToDelete) setCategory('General'); // Reset category to 'General' if the deleted one is currently selected
             saveData(updatedData)
                 .catch((error) => {
                     console.error('Error deleting category:', error);
@@ -112,12 +112,12 @@ const CategoryManager = ({ categories, setCategories }) => {
         }
     };
 
-    // Filtrerar data baserat på den valda kategorin
+    // Filter data based on the selected category
     const filteredData = data.filter((item) => item.category === category);
 
     return (
         <div>
-            {/* Formulär för inmatning */}
+            {/* Form for data input */}
             <CustomForm
                 inputValue={inputValue}
                 setInputValue={setInputValue}
@@ -130,7 +130,7 @@ const CategoryManager = ({ categories, setCategories }) => {
                 handleClear={handleClear}
             />
 
-            {/* Kategori-väljare */}
+            {/* Category selector */}
             <CategorySelector
                 categories={categories}
                 category={category}
@@ -138,14 +138,14 @@ const CategoryManager = ({ categories, setCategories }) => {
                 label="Select Category"
             />
 
-            {/* Lista över data */}
+            {/* List of data */}
             <DataList
                 filteredData={filteredData}
                 handleEdit={handleEdit}
                 handleRemove={handleRemove}
             />
 
-            {/* Åtgärdsknappar */}
+            {/* Action buttons */}
             <ActionButtons
                 handleClear={handleClear}
                 handleAddCategory={handleAddCategory}

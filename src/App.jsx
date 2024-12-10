@@ -1,4 +1,4 @@
-// Importerar React och nödvändiga moduler från react-router-dom för routing.
+// Imports React and necessary modules from react-router-dom for routing.
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -8,14 +8,14 @@ import NavBar from './components/NavBar';
 const App = () => {
     return (
         <>
-            {/* Renderar (NavBar) högst upp på sidan */}
+            {/* Renders the NavBar component at the top of the page */}
             <NavBar />
 
-            {/* Definierar de olika rutterna i appen */}
+            {/* Defines the different routes in the app */}
             <Routes>
-                {/* Den första routen visar HomePage-komponenten när användaren navigerar till root ("/") */}
+                {/* The first route displays the HomePage component when the user navigates to the root ("/") */}
                 <Route path="/" element={<HomePage />} />
-                {/* Den andra routen visar DataPage-komponenten när användaren navigerar till "/data" */}
+                {/* The second route displays the DataPage component when the user navigates to "/data" */}
                 <Route path="/data" element={<DataPage />} />
             </Routes>
         </>

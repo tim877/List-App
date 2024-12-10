@@ -1,26 +1,38 @@
 [
   {
+    "text": "assadsaasd",
+    "category": "General"
+  },
+  {
+    "text": "asd",
+    "category": "hej"
+  },
+  {
+    "text": "dfs",
+    "category": "hej"
+  },
+  {
+    "text": "asd",
+    "category": "hej"
+  },
+  {
+    "text": "asddasasddsa",
+    "category": "hej"
+  },
+  {
+    "text": "eqwewqe",
+    "category": "General"
+  },
+  {
+    "text": "weqqweewqwqwqe",
+    "category": "General"
+  },
+  {
     "text": "Köttbullar",
     "category": "Mat"
   },
   {
     "text": "Tacos",
     "category": "Mat"
-  },
-  {
-    "text": "hallå",
-    "category": "General"
-  },
-  {
-    "text": "tja",
-    "category": "General"
-  },
-  {
-    "text": "hejsan",
-    "category": "General"
-  },
-  {
-    "text": "hej",
-    "category": "General"
   }
 ]
