@@ -13,8 +13,11 @@ const HomePage = () => {
             <Box className="centered-box">
                 <h1 className="title">Create a list</h1>
             </Box>
-            {/* CategoryManager component is passed categories and a function to update them */}
-            <CategoryManager categories={categories} setCategories={setCategories} />
+            {/* Container for CategoryManager */}
+            <Box className="category-manager-container">
+                {/* CategoryManager component is passed categories and a function to update them */}
+                <CategoryManager categories={categories} setCategories={setCategories} />
+            </Box>
         </Box>
     );
 };

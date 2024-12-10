@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchJsonData } from '../api/dataServiceAxios';
-import { Container, Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Container, Typography, List, ListItem, ListItemText, Paper, Box } from '@mui/material';
 import '../styles/DataPage.css';
 
 const DataPage = () => {
@@ -20,23 +20,26 @@ const DataPage = () => {
             <Typography className="data-page-title" variant="h4" gutterBottom>
                 All Data
             </Typography>
-            {/* Paper component to surround the list */}
-            <Paper className="data-paper">
-                {/* List containing each data object */}
-                <List className="data-list">
-                    {data.map((item, index) => (
-                        // Creates a list item for each object in the data
-                        <ListItem key={index} className="data-list-item">
-                            <ListItemText
-                                // Displays the text from the data object
-                                primary={<span className="data-item-text">{item.text}</span>}
-                                // Displays the category of the data object
-                                secondary={<span className="data-item-category">{item.category}</span>}
-                            />
-                        </ListItem>
-                    ))}
-                </List>
-            </Paper>
+            {/* Box component to wrap the list */}
+            <Box className="data-list-container">
+                {/* Paper component to surround the list */}
+                <Paper className="data-paper">
+                    {/* List containing each data object */}
+                    <List className="data-list">
+                        {data.map((item, index) => (
+                            // Creates a list item for each object in the data
+                            <ListItem key={index} className="data-list-item">
+                                <ListItemText
+                                    // Displays the text from the data object
+                                    primary={<span className="data-item-text">{item.text}</span>}
+                                    // Displays the category of the data object
+                                    secondary={<span className="data-item-category">{item.category}</span>}
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Paper>
+            </Box>
         </Container>
     );
 };

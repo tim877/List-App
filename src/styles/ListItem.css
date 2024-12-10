@@ -4,9 +4,19 @@
     border-radius: 8px; 
     margin-bottom: 8px; 
     transition: background-color 0.3s ease; 
+    padding-right: 10px; /* Adds space on the right side */
 }
 
 /* Styling for custom list item on hover */
 .custom-list-item:hover {
     background-color: #2a2a2a; 
+}
+
+/* Makes sure the text wraps and resizes */
+.custom-list-item .MuiListItemText-root {
+    white-space: normal; /* Allows the text to wrap */
+    word-wrap: break-word; /* Ensures long words break */
+    font-size: calc(1vw + 1em);
+    overflow-wrap: break-word; /* Ensures text breaks within the item */
+    margin-right: 20px; /* Adds a margin to the right of the text */
 }

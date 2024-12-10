@@ -1,6 +1,6 @@
 /* Set the background color for the entire page */
 body {
-    background-color: #121212;
+    background-color: #eb4545;
     color: #ffffff;
 }
 
@@ -20,6 +20,14 @@ body {
     text-align: center;
     margin-bottom: 24px;
     color: #ffffff;
+}
+
+/* Styling for the Box container around the list */
+.data-list-container {
+    padding: 16px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Paper styling for the list */
@@ -60,4 +68,39 @@ body {
 /* Styling for the Paper component */
 .css-1gtchvp-MuiPaper-root {
     background-color: #121212 !important;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .data-container {
+        width: 90%;
+        /* Adjusts the width for smaller screens */
+        padding: 15px;
+    }
+
+    .data-list-container {
+        padding: 12px;
+    }
+
+    .data-item-text {
+        font-size: 14px;
+        /* Smaller text size for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .data-container {
+        width: 100%;
+        /* Full width for very small screens */
+        padding: 10px;
+    }
+
+    .data-list-container {
+        padding: 8px;
+    }
+
+    .data-item-text {
+        font-size: 12px;
+        /* Further reduced text size */
+    }
 }
