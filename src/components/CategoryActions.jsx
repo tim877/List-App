@@ -22,7 +22,7 @@ const CategoryActions = ({
             fullWidth
             onClick={handleAddCategory}
         >
-            Add Category
+            Add List
         </Button>
 
         {/* Button to clear all data in the selected category */}
@@ -33,7 +33,7 @@ const CategoryActions = ({
             fullWidth
             onClick={handleClear}
         >
-            Clear All Data In Category
+            Clear All Data In List
         </Button>
 
         {/* Dropdown to select a category to delete, uses the CategorySelector component */}
@@ -41,7 +41,7 @@ const CategoryActions = ({
             categories={categories} // List of all categories
             category={categoryToDelete} // The selected category
             setCategory={setCategoryToDelete} // Function to update the selected category
-            label="Select a category to delete" // Custom label for deletion context
+            label="Select a list to delete" // Custom label for deletion context
         />
 
         {/* Button to delete the selected category */}
@@ -53,7 +53,7 @@ const CategoryActions = ({
             disabled={!categoryToDelete} // Button is disabled if no category is selected
             sx={{ marginTop: '16px' }} // Extra spacing above the button
         >
-            Delete Selected Category
+            Delete Selected List
         </Button>
     </Stack>
 );
