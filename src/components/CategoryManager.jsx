@@ -98,7 +98,7 @@ const CategoryManager = ({ categories, setCategories }) => {
     // Function to delete a category
     const handleDeleteCategory = () => {
         if (!selectedCategoryToDelete || selectedCategoryToDelete === 'General') {
-            return alert('Cannot delete General.'); // Prevent deleting the 'General' category
+            return alert('Can’t delete General.'); // Prevent deleting the 'General' category
         }
         if (window.confirm(`Are you sure you want to delete category "${selectedCategoryToDelete}"?`)) {
             const updatedCategories = categories.filter((cat) => cat !== selectedCategoryToDelete); // Filter out the selected category
@@ -131,7 +131,7 @@ const CategoryManager = ({ categories, setCategories }) => {
                 setCategoryToDelete={setCategoryToDelete}
                 handleDeleteCategory={handleDeleteCategory}
                 handleAddCategory={handleAddCategory}
-                handleClear={handleClearCategoryData }
+                handleClear={handleClearCategoryData}
             />
 
             {/* Category selector */}
@@ -151,7 +151,7 @@ const CategoryManager = ({ categories, setCategories }) => {
 
             {/* Category Actions */}
             <CategoryActions
-                handleClear={handleClearCategoryData }
+                handleClear={handleClearCategoryData}
                 handleAddCategory={handleAddCategory}
                 handleDeleteCategory={handleDeleteCategory}
                 categoryToDelete={selectedCategoryToDelete}
